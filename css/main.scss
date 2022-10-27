@@ -1,0 +1,127 @@
+@use "./sass" as *;
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 48;
+}
+// * {
+// outline: 2px solid magenta;
+// }
+
+body {
+    // background-color: #a49fc0;
+    // background-image: url("../imgs/noise.png");
+    // background-color: peachpuff;
+    line-height: 1.4 bac;
+}
+// .main-wrapper {
+//     width: min(90%, 1200px);
+//     // border: 2px solid black;
+//     margin: 0 auto;
+// }
+
+.diff-text {
+    color: $alt-color;
+}
+
+// input {
+//     background-color: $alt-text;
+// }
+
+span {
+    // font-size: inherit;
+    vertical-align: middle;
+}
+
+.btn {
+    @include btn(8rem, 3.5rem);
+}
+
+img,
+input {
+    border-radius: $radius;
+}
+
+#toggleNav {
+    cursor: pointer;
+}
+
+.small-form {
+    div {
+        background-color: $btn-text;
+        padding: $sm-pd;
+        @include flex(start);
+        // max-width: 500px;
+        max-width: max-content;
+        border-radius: $radius;
+        input {
+            // border: none;
+            // flex: 2;
+            // flex-shrink: 3;
+            // border: 1px solid #333;
+            min-width: 0;
+            flex-shrink: 1.5;
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+        button {
+            // flex: 3;
+            flex-shrink: 1;
+            width: 5rem;
+            height: 2.5rem;
+        }
+    }
+}
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+.services {
+    // background-color: blue;
+    // background-image: repeating-conic-gradient(#eeeeee 0% 25%, #ffffff 0% 50%);
+    // background-position: 0 0, 13px 13px;
+    // background-size: 26px 26px;
+    .service {
+        // border: 3px solid #eee;
+        border-radius: $radius;
+        min-width: 280px;
+        max-width: 350px;
+        transition: all 0.4s;
+        padding: $lg-pd;
+        &__icon {
+            // border: .5px solid red;
+            border-radius: $radius;
+        }
+        &:nth-child(1) .service__icon {
+            background: #2d9cdb;
+        }
+        &:nth-child(2) .service__icon {
+            background: #27ae60;
+        }
+        &:nth-child(3) .service__icon {
+            background: #eb5757;
+        }
+        // & {border: 10px solid black;}
+        &:hover {
+            box-shadow: 9px 3px 16.5px 2px #ddd;
+            background-image: url("./imgs/noise.png");
+            background-color: darken($color: $bg, $amount: 5%);
+        }
+    }
+}
+
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+#footer {
+    background-color: $alt-bg;
+    color: $bg;
+    input {
+        color: $text;
+    }
+    a {
+        &:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+    }
+}

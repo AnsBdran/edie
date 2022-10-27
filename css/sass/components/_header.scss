@@ -1,0 +1,67 @@
+@use "../helpers/" as *;
+
+.header {
+    // background-color: blueviolet;
+    min-height: $header-height;
+    position: relative;
+    // border: 2px solid black;
+    @include flex;
+    &__nav {
+        position: absolute;
+        top: $header-height;
+        background-color: $bg;
+        // background: inherit;
+        // display: none;
+        clip-path: polygon(100.1% 0%, 100.1% 0%, 0% 0%, 0% 0%);
+        // text-align: center;
+        transition: 0.5s;
+        border-radius: 0% 0% $radius $radius;
+        width: 100%;
+        &.active {
+            // box-shadow: 1px 7.5px 21px 9.5px #dddddd;
+            clip-path: polygon(100.1% 100.3%, 100.1% 0.5%, 0% 0%, 0% 100.3%);
+        }
+        & .nav__links {
+            // width: 100%;
+            border: 2px solid green;
+            @include flex(space-between, stretch, column);
+            text-align: center;
+        }
+        & li {
+            @include flex(stretch);
+            .nav__link {
+                padding: $md-pd;
+                border: 2px solid green;
+                // border: 2px solid red;
+                width: 100%;
+                // width: 12rem;
+                &:hover {
+                    background-color: darken($color: $bg, $amount: 10%);
+                }
+            }
+        }
+        // & .nav__links {
+        //     display: flex;
+        //     flex-direction: column;
+        // }
+    }
+
+    // media
+    @media screen and (min-width: 740px) {
+        justify-content: space-between;
+        &__nav {
+            position: static;
+            width: auto;
+            clip-path: polygon(100.1% 100.3%, 100.1% 0.5%, 0% 0%, 0% 100.3%);
+            max-width: 80%;
+            & .nav__links {
+                // display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        #toggleNav {
+            display: none;
+        }
+    }
+}

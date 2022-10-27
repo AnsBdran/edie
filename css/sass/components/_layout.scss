@@ -1,0 +1,174 @@
+@use "../helpers/mixins" as m;
+@use "../helpers/vars" as v;
+
+.section {
+    &:not(header) {
+        margin-top: v.$xl-mg * 3;
+    }
+    margin: 0 auto;
+    width: min(90%, 1200px);
+    &__title {
+        margin-bottom: v.$md-mg;
+    }
+}
+
+main {
+    // margin-top: v.$xl-mg * 1.4;
+}
+// ||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||
+
+.section.main-title {
+    margin-top: v.$xl-mg;
+    h1 {
+        margin: v.$sm-mg 0 v.$md-mg 0;
+    }
+}
+// ||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||
+.section.join-us {
+    margin-top: v.$xl-mg;
+    .small-form {
+        margin-top: v.$sm-mg;
+    }
+}
+
+// ||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||
+
+.section.services {
+    .services {
+        @include m.flex(start, start);
+        // flex-direction: row;
+        flex-wrap: wrap;
+        // @media screen and (min-width: 700px) {
+        // }
+        gap: v.$md-mg;
+        .service {
+            // border: 2px solid red;
+            // flex-basis: 400px;
+            // flex-shrink: 0.5;
+            // margin: v.$sm-mg auto;
+            // max-width: 80%;
+            & > *:not(:last-child) {
+                margin-bottom: v.$lg-mg;
+            }
+            &__icon {
+                width: 4rem;
+                height: 4rem;
+                @include m.center;
+            }
+            &__title {
+                // margin-bottom: v.$md-mg;
+            }
+        }
+    }
+}
+
+//          ||||||||||||||||||||||||||||||||||
+// Desings  ||||||||||||||||||||||||||||||||||
+
+.section.designs {
+    .designs-wrapper {
+        @include m.flex(start, center, row);
+        flex-wrap: wrap;
+        gap: v.$lg-mg;
+        .design {
+            border: 2px solid #ccc;
+            margin-bottom: v.$lg-mg;
+        }
+    }
+}
+
+// ||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||
+
+.team {
+    @include m.flex(space-between, stretch, column);
+    @media screen and (min-width: 700px) {
+        flex-direction: row;
+        align-items: center;
+        gap: v.$xl-mg;
+    }
+    gap: v.$md-mg;
+    &__text {
+        & > * {
+            margin-bottom: v.$sm-mg;
+        }
+    }
+
+    &__imgs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: v.$sm-mg;
+        img:first-child {
+            grid-row: 1/ 3;
+            align-self: center;
+        }
+        img:nth-child(2) {
+            width: 90%;
+        }
+    }
+}
+
+// ||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||
+
+.quote {
+    figure {
+        blockquote {
+        }
+        figcaption {
+            margin-top: v.$sm-mg;
+            @include m.flex(start, stretch);
+            img {
+                width: 5rem;
+            }
+            .desc {
+                margin-left: v.$md-mg;
+                padding: v.$sm-pd;
+                border: 2px solid red;
+                @include m.flex(space-between, center, column);
+            }
+        }
+    }
+}
+
+// ||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||
+
+#footer {
+    .footer {
+        padding: v.$lg-mg 0;
+        @include m.flex(space-between);
+        flex-wrap: wrap;
+        gap: v.$lg-mg;
+        & > * {
+            min-width: 0;
+        }
+        &__links {
+            // margin-bottom: v.$lg-mg;
+        }
+        &__socials {
+            // margin-bottom: v.$lg-mg;
+            .icons {
+                @include m.flex(start);
+                gap: v.$tiny-mg;
+                & > * {
+                    width: 2.5rem;
+                }
+            }
+        }
+        &__form {
+            // margin-bottom: v.$lg-mg;
+        }
+    }
+    p {
+        text-align: center;
+        padding-bottom: v.$md-mg;
+        span {
+            // line-height: 0.3;
+            // vertical-align: middle;
+        }
+    }
+}
