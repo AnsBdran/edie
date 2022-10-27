@@ -72,6 +72,19 @@ input {
         }
     }
 }
+
+.more {
+    span {
+        transition: all 0.4s;
+    }
+    &:hover {
+        // text-decoration: underline;
+        color: darken($color: $alt-color, $amount: 25%);
+        span {
+            transform: translateX(5px);
+        }
+    }
+}
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 

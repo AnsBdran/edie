@@ -78,6 +78,7 @@ p {
   flex-direction: row;
 }
 .header__nav {
+  filter: drop-shadow(100px 7.5px 21px 9.5px #000000);
   position: absolute;
   top: 4rem;
   background-color: #fff;
@@ -90,7 +91,6 @@ p {
   clip-path: polygon(100.1% 100.3%, 100.1% 0.5%, 0% 0%, 0% 100.3%);
 }
 .header__nav .nav__links {
-  border: 2px solid green;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -105,11 +105,10 @@ p {
 }
 .header__nav li .nav__link {
   padding: 0.6em 1.2em;
-  border: 2px solid green;
   width: 100%;
 }
 .header__nav li .nav__link:hover {
-  background-color: #e6e6e6;
+  color: #1419ff;
 }
 @media screen and (min-width: 740px) {
   .header {
@@ -124,6 +123,9 @@ p {
   .header__nav .nav__links {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .header__nav .nav__links .nav__link {
+    border-radius: 0.6em;
   }
   .header #toggleNav {
     display: none;
@@ -182,7 +184,6 @@ p {
   gap: 2rem;
 }
 .section.designs .designs-wrapper .design {
-  border: 2px solid #ccc;
   margin-bottom: 2rem;
 }
 
@@ -229,7 +230,6 @@ p {
 .quote figure figcaption .desc {
   margin-left: 1.5rem;
   padding: 0.4em 0.8em;
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -327,6 +327,16 @@ input {
   flex-shrink: 1;
   width: 5rem;
   height: 2.5rem;
+}
+
+.more span {
+  transition: all 0.4s;
+}
+.more:hover {
+  color: #0004c7;
+}
+.more:hover span {
+  transform: translateX(5px);
 }
 
 .services .service {

@@ -74,7 +74,7 @@ main {
         flex-wrap: wrap;
         gap: v.$lg-mg;
         .design {
-            border: 2px solid #ccc;
+            // border: 2px solid #ccc;
             margin-bottom: v.$lg-mg;
         }
     }
@@ -127,7 +127,7 @@ main {
             .desc {
                 margin-left: v.$md-mg;
                 padding: v.$sm-pd;
-                border: 2px solid red;
+                // border: 2px solid red;
                 @include m.flex(space-between, center, column);
             }
         }
